@@ -70,6 +70,24 @@ public class TestClasses {
         
         assertEquals(ss, nc);
     }
+
+    @Test
+    public void testMain2() {
+        String[] args = null;
+        Class1.main(args);
+        
+        System.out.println("main");
+        
+        String nc = systemOutRule.getLog();
+        systemOutRule.clearLog();
+        
+        Class2.main(args);
+        
+        System.out.println("main");
+        String ss = systemOutRule.getLog();
+        
+        assertEquals(ss, nc);
+    }
     
     
 }

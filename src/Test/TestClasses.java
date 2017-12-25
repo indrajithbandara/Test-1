@@ -21,76 +21,75 @@ import org.junit.contrib.java.lang.system.SystemOutRule;
  */
 public class TestClasses {
 
-	@Rule
-	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+    @Rule
+    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
-	public void writesTextToSystemOut() {
-		System.out.print("hello world");
-		assertEquals("hello world", systemOutRule.getLog());
-	}
+    public void writesTextToSystemOut() {
+        System.out.print("hello world");
+        assertEquals("hello world", systemOutRule.getLog());
+    }
 
-	public TestClasses() {
-	}
+    public TestClasses() {
+    }
 
-	@BeforeClass
-	public static void setUpClass() {
-	}
+    @BeforeClass
+    public static void setUpClass() {
+    }
 
-	@AfterClass
-	public static void tearDownClass() {
-	}
+    @AfterClass
+    public static void tearDownClass() {
+    }
 
-	@Before
-	public void setUp() {
-	}
+    @Before
+    public void setUp() {
+    }
 
-	@After
-	public void tearDown() {
-	}
+    @After
+    public void tearDown() {
+    }
 
-	@Test
-	public void testMain() {
+    
+    @Test
+    public void testMain() {
+        String[] args = null;
+        org.configuration.class1.Class.main(args);
+        
+        
+        String nc = systemOutRule.getLog();
+        systemOutRule.clearLog();
+        
+        org.configuration.class2.Class.main(args);
+        
+        String ss = systemOutRule.getLog();
+        
+        assertEquals(ss, nc);
+    
+}
 
-		String ss = "org.configuration.manager";
-		String nc = "org.configuration.manager";
-		assertEquals(ss, nc);
+    @Test
+    public void testMain2() {
 
-	}
+        long startTime = System.currentTimeMillis();
 
-	@Test
-	public void testMain2() {
-		String ss = "org.configuration.manager";
-		String nc = "org.configuration.manager";
-		assertEquals(ss, nc);
-	}
-
-	@Test
-	public void testMain3() {
-		String[] args = null;
-		long startTime = System.currentTimeMillis();
-
-		org.configuration.class1.Class.main(args);
+		org.configuration.class1.Class.main(null);
 
 		long endTime = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
-
-
-		String nc = systemOutRule.getLog();
 		System.out.println("Run time "+totalTime);
 
-		systemOutRule.clearLog();
-		startTime = System.currentTimeMillis();
+    }
+    @Test
+    public void testMain3() {
 
-		org.configuration.class2.Class.main(args);
+        long startTime = System.currentTimeMillis();
 
-		endTime = System.currentTimeMillis();
-		totalTime = endTime - startTime;
+		org.configuration.class2.Class.main(null);
 
-
-		String ss = systemOutRule.getLog();
+		long endTime = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
 		System.out.println("Run time "+totalTime);
 
-		assertEquals(ss, nc);
-	}
-
+    }
+    
+    
 }

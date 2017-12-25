@@ -1,6 +1,6 @@
-package org.configuration.classes;
+package org.configuration.class2;
 
-public class Class2 {
+public class Class {
 
 	static int add(int a, int b) {
 		return a + b;

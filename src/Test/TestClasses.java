@@ -7,16 +7,12 @@ package Test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.configuration.classes.Class1;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-
-import org.configuration.classes.*;
-
 import org.junit.contrib.java.lang.system.SystemOutRule;
 
 /**
@@ -56,16 +52,14 @@ public class TestClasses {
     @Test
     public void testMain() {
         String[] args = null;
-        Class1.main(args);
+        org.configuration.class1.Class.main(args);
         
-        System.out.println("main");
         
         String nc = systemOutRule.getLog();
         systemOutRule.clearLog();
         
-        Class2.main(args);
+        org.configuration.class2.Class.main(args);
         
-        System.out.println("main");
         String ss = systemOutRule.getLog();
         
         assertEquals(ss, nc);
@@ -74,16 +68,14 @@ public class TestClasses {
     @Test
     public void testMain2() {
         String[] args = null;
-        Class1.main(args);
+        org.configuration.class1.Class.main(args);
         
-        System.out.println("main");
         
         String nc = systemOutRule.getLog();
         systemOutRule.clearLog();
         
-        Class2.main(args);
+        org.configuration.class2.Class.main(args);
         
-        System.out.println("main");
         String ss = systemOutRule.getLog();
         
         assertEquals(ss, nc);

@@ -75,7 +75,7 @@ public class TestClasses {
 
 		long endTime = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
-		System.out.println("Run time "+totalTime);
+		System.out.println("\nRun time "+totalTime+" second");
 
     }
     @Test
@@ -87,7 +87,7 @@ public class TestClasses {
 
 		long endTime = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
-		System.out.println("Run time "+totalTime);
+		System.out.println("\nRun time "+totalTime+ "seconds");
 
     }
     

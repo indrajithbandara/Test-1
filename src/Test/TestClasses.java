@@ -74,9 +74,10 @@ public class TestClasses {
 		long endTime = System.currentTimeMillis();
 		long totalTime = endTime - startTime;
 
-		System.out.println("Run time "+totalTime);
 
 		String nc = systemOutRule.getLog();
+		System.out.println("Run time "+totalTime);
+
 		systemOutRule.clearLog();
 		startTime = System.currentTimeMillis();
 
@@ -85,9 +86,9 @@ public class TestClasses {
 		endTime = System.currentTimeMillis();
 		totalTime = endTime - startTime;
 
-		System.out.println("Run time "+totalTime);
 
 		String ss = systemOutRule.getLog();
+		System.out.println("Run time "+totalTime);
 
 		assertEquals(ss, nc);
 	}
